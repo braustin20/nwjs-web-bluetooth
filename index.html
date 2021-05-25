@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bluetooth Menu</title>
+</head>
+<body>
+
+<p>Connect to a device using the Bluetooth menu in the menu bar.</p>
+<p>Once connected an alert should pop with device details.</p>
+
+<script>
+// Create an empty context menu
+var menu = new nw.Menu({type: "menubar"});
+menu.createMacBuiltin("helloworld");
+var submenu = new nw.Menu();
+
+// Add some items with label
+submenu.append(new nw.MenuItem({
+  label: 'Request Bluetooth Device',
+  click: function(){
+    navigator.bluetooth.requestDevice({acceptAllDevices: true})
+    .then(device => {
+        window.alert(`Name: ${device.name} ID: ${device.id} Connected: ${device.gatt.connected}`);
+    })
+    .catch(error => {
+        console.error('Error: ' + error);
+    });
+  }
+}));
+
+// Create and append the 1st level menu to the menubar
+menu.append(new nw.MenuItem({
+  label: 'Bluetooth',
+  submenu: submenu
+}));
+
+nw.Window.get().menu = menu;
+
+</script>  
+</body>
+</html>
