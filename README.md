@@ -2,7 +2,7 @@
 This project is a test using NW.js version v0.41.3 to verify that it can utilize the [web bluetooth API](https://webbluetoothcg.github.io/web-bluetooth/) to connect and communicate with other bluetooth devices.
 
 ## What is it?
-This project is a simple html page ran with NW.js to function similar to a native application. With this approach we are able to add additional items to the system toolbar for the page's window.
+This project is a simple html web page which when ran with NW.js, it will function similar to a native application. With this approach we are able to add additional menu items to the system's toolbar.
 
 An additional menu called "Bluetooth" can be found in the toolbar, with a menu option to "Request Bluetooth Device". When this option is selected the bluetooth API's pairing menu will appear. Once successfully paired to a device, a browser alert will be shown containing the device information.
 
