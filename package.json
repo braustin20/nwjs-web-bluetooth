@@ -1,4 +1,5 @@
 {
     "name": "helloworld",
-    "main": "index.html"
+    "main": "index.html",
+    "chromium-args" : "--enable-experimental-web-platform-features"
 }

@@ -11,7 +11,7 @@
 <script>
 // Create an empty context menu
 var menu = new nw.Menu({type: "menubar"});
-menu.createMacBuiltin("helloworld");
+if (navigator.platform.indexOf('Mac') > -1) menu.createMacBuiltin("helloworld");
 var submenu = new nw.Menu();
 
 // Add some items with label
